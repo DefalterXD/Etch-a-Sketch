@@ -30,3 +30,13 @@ body {
     background-color: #fff;
 }
 
+.left__column,
+.right__column {
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 12px;
+}
+
