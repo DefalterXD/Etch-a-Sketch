@@ -11,3 +11,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.game__title {
+    margin-bottom: 2rem;
+}
