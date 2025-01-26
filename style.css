@@ -16,6 +16,12 @@ body {
     margin-bottom: 2rem;
 }
 
+.main__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .grid__field {
     display: flex;
     flex-wrap: wrap;
@@ -23,3 +29,4 @@ body {
     height: 400px;
     background-color: #fff;
 }
+
