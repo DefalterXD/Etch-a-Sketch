@@ -36,3 +36,10 @@ const createCells = function createNumberOfCells(cellsNumber = 10) {
         }
     }
 };
+
+makeField(); // Initialize immediately to fill out the field
+
+
+inputFieldSize.addEventListener('input', () => {
+    makeField();
+});
