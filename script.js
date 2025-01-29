@@ -1,6 +1,10 @@
 const gridSizeCounter = document.querySelector('.size__view');
 const gridField = document.querySelector('.grid__field');
 const inputFieldSize = document.querySelector('input[type="range"]');
+const pickedColor = document.querySelector('input[type="color"]');
+let pickedColorValue = '#000'; // default value
+let temporaryStorageForColor = '#000'; // for previous changed color
+const pickedColorButton = document.querySelector('.picked__color');
 
 const makeField = function makeFieldOfCells() {
     let gridValue = Number(inputFieldSize.value);
@@ -37,9 +41,18 @@ const createCells = function createNumberOfCells(cellsNumber = 10) {
     }
 };
 
+const applyColor = function applyColorToCell(event) {
+    pickedColorValue = event.target.value;
+    temporaryStorageForColor = event.target.value;
+};
+
 makeField(); // Initialize immediately to fill out the field
 
 
 inputFieldSize.addEventListener('input', () => {
     makeField();
+});
+
+pickedColorButton.addEventListener('click', () => {
+    pickedColor.addEventListener('input', applyColor);
 });
