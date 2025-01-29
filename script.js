@@ -53,6 +53,11 @@ inputFieldSize.addEventListener('input', () => {
     makeField();
 });
 
+gridField.addEventListener('mouseover', (event) => {
+    const hoveredAboveCell = event.target;
+    hoveredAboveCell.style.backgroundColor = pickedColorValue; 
+});
+
 pickedColorButton.addEventListener('click', () => {
     pickedColor.addEventListener('input', applyColor);
 });
