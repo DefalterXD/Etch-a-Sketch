@@ -82,6 +82,7 @@ gridField.addEventListener('mouseover', (event) => {
 
 pickedColorButton.addEventListener('click', () => {
     pickedColor.addEventListener('input', applyColor);
+    gridField.removeEventListener('mouseover', applyRandomColor);
 });
 
 randomColorButton.addEventListener('click', () => {
