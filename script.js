@@ -6,11 +6,12 @@ let pickedColorValue = '#000'; // default value
 let temporaryStorageForColor = '#000'; // for previous changed color
 const pickedColorButton = document.querySelector('.picked__color');
 const randomColorButton = document.querySelector('.random__color');
+const fillColorButton = document.querySelector('.fill__color');
 
 const makeField = function makeFieldOfCells() {
+    const gridFieldCells = document.querySelectorAll('.cell');
     let gridValue = Number(inputFieldSize.value);
     gridText(gridValue);
-    const gridFieldCells = document.querySelectorAll('.cell');
     checkForCells(gridFieldCells);
     createCells(gridValue);
 };
@@ -61,6 +62,12 @@ const generateRandomColor = function generateRandomColorToCell() {
     pickedColorValue = newHexColor;
 };
 
+const applyFillColor = function applyFillToEveryCell(fieldOfCells, pickedColorValue) {
+    fieldOfCells.forEach((cell) => {
+        cell.style.backgroundColor = pickedColorValue;
+    });
+};
+
 makeField(); // Initialize immediately to fill out the field
 
 
@@ -80,4 +87,9 @@ pickedColorButton.addEventListener('click', () => {
 randomColorButton.addEventListener('click', () => {
     pickedColor.removeEventListener('input', applyColor);
     gridField.addEventListener('mouseover', applyRandomColor);
+});
+
+fillColorButton.addEventListener('click', () => {
+    const copyOfGridCells = document.querySelectorAll('.cell');
+    applyFillColor(copyOfGridCells, temporaryStorageForColor);
 });
