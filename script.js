@@ -7,11 +7,12 @@ let temporaryStorageForColor = '#000'; // for previous changed color
 const pickedColorButton = document.querySelector('.picked__color');
 const randomColorButton = document.querySelector('.random__color');
 const fillColorButton = document.querySelector('.fill__color');
+const opacityColorButton = document.querySelector('.opacity__color');
 
 const makeField = function makeFieldOfCells() {
-    const gridFieldCells = document.querySelectorAll('.cell');
     let gridValue = Number(inputFieldSize.value);
     gridText(gridValue);
+    const gridFieldCells = document.querySelectorAll('.cell');
     checkForCells(gridFieldCells);
     createCells(gridValue);
 };
@@ -29,14 +30,12 @@ const checkForCells = function checkForExistingCells(nodeOfCells) {
 };
 
 const createCells = function createNumberOfCells(cellsNumber = 10) {
-    for (let i = 0; i < cellsNumber; i++)
-    {
-        for (let j = 0; j < cellsNumber; j++)
-        {
+    for (let i = 0; i < cellsNumber; i++) {
+        for (let j = 0; j < cellsNumber; j++) {
             const cell = document.createElement('div');
-            cell.classList.toggle('cell');
-            cell.style.width = `${(400 / cellsNumber)}px`;
-            cell.style.height = `${(400 / cellsNumber)}px`;
+            cell.classList.add('cell');
+            cell.style.width = `${(100 / cellsNumber)}%`;
+            cell.style.height = `${(100 / cellsNumber)}%`;
             cell.style.border = '1px solid #000';
             gridField.appendChild(cell);
         }
