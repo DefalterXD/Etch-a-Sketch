@@ -28,11 +28,12 @@ body {
     width: 400px;
     height: 400px;
     background-color: #fff;
+    align-content: center;
 }
 
 .left__column,
 .right__column {
-    width: 100px;
+    width: 120px;
     height: 120px;
     display: flex;
     flex-direction: column;
