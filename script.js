@@ -4,11 +4,12 @@ const inputFieldSize = document.querySelector('input[type="range"]');
 const pickedColor = document.querySelector('input[type="color"]');
 let pickedColorValue = '#000'; // default value
 let temporaryStorageForColor = '#000'; // for previous changed color
-let opacityColorValue = 1; // default to view the color
+let opacityColorValue = 1; // default to view the opacity color
 const pickedColorButton = document.querySelector('.picked__color');
 const randomColorButton = document.querySelector('.random__color');
 const fillColorButton = document.querySelector('.fill__color');
 const opacityColorButton = document.querySelector('.opacity__color');
+const clearGridButton = document.querySelector('.clear__button');
 
 const makeField = function makeFieldOfCells() {
     let gridValue = Number(inputFieldSize.value);
@@ -76,7 +77,7 @@ const applyOpacityColor = function applyOpacityColorToCell(event) {
     cell.style.opacity = opacityColorValue;
 };
 
-makeField(); // Initialize immediately to fill out the field
+makeField(); // Initialize immediately to fill out the field at the start
 
 
 inputFieldSize.addEventListener('input', () => {
@@ -108,4 +109,11 @@ opacityColorButton.addEventListener('click', () => {
     pickedColor.removeEventListener('input', applyColor);
     gridField.removeEventListener('mouseover', applyRandomColor);
     gridField.addEventListener('mouseover', applyOpacityColor);
+});
+
+clearGridButton.addEventListener('click', () => {
+    pickedColor.removeEventListener('input', applyColor);
+    gridField.removeEventListener('mouseover', applyRandomColor);
+    gridField.removeEventListener('mouseover', applyOpacityColor);
+    makeField(); // Make a clear grid field
 });
