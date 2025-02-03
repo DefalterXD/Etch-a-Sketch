@@ -4,6 +4,7 @@ const inputFieldSize = document.querySelector('input[type="range"]');
 const pickedColor = document.querySelector('input[type="color"]');
 let pickedColorValue = '#000'; // default value
 let temporaryStorageForColor = '#000'; // for previous changed color
+let opacityColorValue = 1; // default to view the color
 const pickedColorButton = document.querySelector('.picked__color');
 const randomColorButton = document.querySelector('.random__color');
 const fillColorButton = document.querySelector('.fill__color');
@@ -44,12 +45,12 @@ const createCells = function createNumberOfCells(cellsNumber = 10) {
 
 const applyColor = function applyColorToCell(event) {
     pickedColorValue = event.target.value;
-    temporaryStorageForColor = event.target.value;
+    temporaryStorageForColor = pickedColorValue;
 };
 
 const applyRandomColor = function applyRandomColorToCell(event) {
-    event.target.style.backgroundColor = pickedColorValue;
     generateRandomColor();
+    event.target.style.backgroundColor = pickedColorValue;
 };
 
 const generateRandomColor = function generateRandomColorToCell() {
@@ -64,7 +65,15 @@ const generateRandomColor = function generateRandomColorToCell() {
 const applyFillColor = function applyFillToEveryCell(fieldOfCells, pickedColorValue) {
     fieldOfCells.forEach((cell) => {
         cell.style.backgroundColor = pickedColorValue;
+        cell.style.opacity = 1; // Keep all cells opacity the same
     });
+};
+
+const applyOpacityColor = function applyOpacityColorToCell(event) {
+    pickedColorValue = temporaryStorageForColor;
+    opacityColorValue += 0.1;
+    const cell = event.target;
+    cell.style.opacity = opacityColorValue;
 };
 
 makeField(); // Initialize immediately to fill out the field
@@ -92,4 +101,11 @@ randomColorButton.addEventListener('click', () => {
 fillColorButton.addEventListener('click', () => {
     const copyOfGridCells = document.querySelectorAll('.cell');
     applyFillColor(copyOfGridCells, temporaryStorageForColor);
+});
+
+opacityColorButton.addEventListener('click', () => {
+    opacityColorValue = 0;
+    pickedColor.removeEventListener('input', applyColor);
+    gridField.removeEventListener('mouseover', applyRandomColor);
+    gridField.addEventListener('mouseover', applyOpacityColor);
 });
