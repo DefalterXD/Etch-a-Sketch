@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <h1 class="game__title">Etch-And-Sketch</h1>
     <main class="main__container">
         <div class="left__column">
             <span class="size__view"></span>
-            <input type="range" min = "1" max = "100" value = "10">
+            <input type="range" min="1" max="100" value="10">
             <button class="picked__color">
                 <input type="color">
             </button>
             <button class="random__color">Random</button>
         </div>
-        <div class="grid__field"></div>
+        <div class="field__border">
+            <div class="grid__field"></div>
+        </div>
         <div class="right__column">
             <button class="fill__color">Fill</button>
             <button class="opacity__color">Opacity</button>
@@ -26,4 +30,5 @@
     </main>
     <script src="./script.js"></script>
 </body>
+
 </html>
