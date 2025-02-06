@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    color: rgba(164, 76, 76, 0.80);
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(202, 91, 91, 0.23);
 }
 
 .game__title {
@@ -49,4 +51,5 @@ body {
     border-radius: 15px;
     border: 1px solid #fff;
     font-size: 1.2rem;
+    background-color: rgba(202, 91, 91, 0.3);
 }
