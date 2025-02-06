@@ -27,6 +27,12 @@ body {
     gap: 50px;
 }
 
+.field__border {
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgba(202, 91, 91, 0.23);
+}
+
 .grid__field {
     display: flex;
     flex-wrap: wrap;
