@@ -44,12 +44,11 @@ There were some tweaks with event listeners and removing them after pressing the
 ## Lesson Learned:
 
 After this project I was able to:
-
 <ul>
     <li>Use attribute for selecting in js.</li>
     <li>How to generate a field of cells into container.</li>
     <li>Use various input types to manipulating with.</li>
     <li>Remove other event listeners so it couldn't interfere while new one is listening.</li>
-    <li>Make paint interactions on the field.<li>
+    <li>Make paint interactions on the field.</li>
     <li>Applying use of function expressions for more cleaner and readable code.</li>
 </ul>
