@@ -55,7 +55,7 @@ body {
 .main__container button {
     padding: 1rem;
     border-radius: 15px;
-    border: 1px solid #fff;
+    border: 5px solid rgba(202, 91, 91, 0.23);
     font-size: 1.2rem;
     background-color: rgba(202, 91, 91, 0.3);
 }
