@@ -21,6 +21,7 @@ const makeField = function makeFieldOfCells() {
 
 const gridText = function countHowMuchCellsInGrid(gridValue = 10) {
     gridSizeCounter.textContent = `Grid: ${gridValue}x${gridValue}`;
+    gridSizeCounter.style.fontSize = '1.2rem';
 };
 
 const checkForCells = function checkForExistingCells(nodeOfCells) {
