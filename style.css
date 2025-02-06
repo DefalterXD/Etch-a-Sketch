@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 50px;
 }
 
 .grid__field {
@@ -41,3 +42,9 @@ body {
     gap: 12px;
 }
 
+.main__container button {
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    font-size: 1.2rem;
+}
