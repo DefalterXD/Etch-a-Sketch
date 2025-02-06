@@ -13,7 +13,7 @@ This project started with an initial phase on setting up the page:
 
 <ol>
   <li>Adding a field and buttons for interaction on that field.</li>
-  <li>Link CSS and JavaScript to HTML..</li>
+  <li>Link CSS and JavaScript to HTML.</li>
   <li>Align the layout relative to each other.</li>
 </ol>
 
