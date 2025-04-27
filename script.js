@@ -33,7 +33,7 @@ const checkForCells = function checkForExistingCells(nodeOfCells) {
     });
 };
 
-const createCells = function createNumberOfCells(cellsNumber = 10) {
+const createCells = function createNumberOfCells(cellsNumber = 10, bgColor) {
     for (let i = 0; i < cellsNumber; i++) {
         for (let j = 0; j < cellsNumber; j++) {
             const cell = document.createElement('div');
@@ -41,6 +41,7 @@ const createCells = function createNumberOfCells(cellsNumber = 10) {
             cell.style.width = `${(100 / cellsNumber)}%`;
             cell.style.height = `${(100 / cellsNumber)}%`;
             cell.style.border = '1px solid #000';
+            cell.style.backgroundColor = bgColor;
             gridField.appendChild(cell);
         }
     }
